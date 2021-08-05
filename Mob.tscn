@@ -15,25 +15,29 @@ animations = [ {
 "name": "fly",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "swim",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "walk",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "swim",
+"speed": 3.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 35.7915
+radius = 35.7928
+height = 28.2657
 
 [node name="Mob" type="RigidBody2D" groups=[
 "mobs",
 ]]
+position = Vector2( -0.353546, -1.41422 )
 collision_mask = 0
 gravity_scale = 0.0
+contacts_reported = 1
+contact_monitor = true
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
@@ -51,4 +55,5 @@ shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
+[connection signal="body_entered" from="." to="." method="hide_mob"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
