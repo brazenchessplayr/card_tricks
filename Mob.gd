@@ -13,5 +13,5 @@ func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
 
-func hide_mob(body):
+func hide_mob(_body):
 	hide()

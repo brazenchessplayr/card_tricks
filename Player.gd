@@ -26,6 +26,9 @@ func _process(delta):
 	else:
 		$AnimatedSprite.stop()
 		
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		shoot()	
+	
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
@@ -40,6 +43,10 @@ func _process(delta):
 		$AnimatedSprite.flip_v = velocity.y > 0
 
 
+
+
+
+
 func _on_Player_body_entered(_body):
 	hide()  # Player disappears after being hit.
 	emit_signal("got_hit")
@@ -50,3 +57,8 @@ func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
+
+func shoot():
+	var projectile = load("res://Bullet.tscn")
+	var bullet = projectile.instance()
+	add_child_below_node(get_tree().get_root().get_node("Main"),bullet)
