@@ -44,16 +44,10 @@ func _process(delta):
 		$AnimatedSprite.animation = "up"
 		$AnimatedSprite.flip_v = velocity.y > 0
 
-
-
-
-
-
 func _on_Player_body_entered(_body):
 	hide()  # Player disappears after being hit.
 	emit_signal("got_hit")
 	$CollisionShape2D.set_deferred("disabled", true)
-
 
 func start(pos):
 	position = pos
@@ -62,4 +56,5 @@ func start(pos):
 
 func shoot():
 	var bullet = Bullet.instance()
-	add_child_below_node(bullet_node ,bullet)
+	bullet_node.add_child(bullet)
+	bullet.start_at(get_position())
