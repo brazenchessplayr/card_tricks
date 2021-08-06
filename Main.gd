@@ -1,14 +1,9 @@
 extends Node
-
-
-
 export (PackedScene) var Mob
 var score
 
-
 func _ready():
 	randomize()
-
 
 func game_over():
 	$ScoreTimer.stop()
@@ -27,7 +22,6 @@ func new_game():
 	$HUD.show_message("Get Ready")
 	$Music.play()
 
-
 func _on_MobTimer_timeout():
 	# Choose a random location on Path2D.
 	$MobPath/MobSpawnLocation.offset = randi()
@@ -45,11 +39,9 @@ func _on_MobTimer_timeout():
 	mob.linear_velocity = Vector2(rand_range(mob.min_speed, mob.max_speed), 0)
 	mob.linear_velocity = mob.linear_velocity.rotated(direction)
 
-
 func _on_ScoreTimer_timeout():
 	score += 1
 	$HUD.update_score(score)
-
 
 func _on_StartTimer_timeout():
 	$MobTimer.start()
