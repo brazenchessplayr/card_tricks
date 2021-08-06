@@ -2,8 +2,10 @@ extends KinematicBody2D
 
 signal got_hit
 
+export (PackedScene) var Bullet
 export var speed = 400
 var screen_size
+onready var bullet_node = get_node("BulletContainer")
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -59,6 +61,5 @@ func start(pos):
 	$CollisionShape2D.disabled = false
 
 func shoot():
-	var projectile = load("res://Bullet.tscn")
-	var bullet = projectile.instance()
-	add_child_below_node(get_tree().get_root().get_node("Main"),bullet)
+	var bullet = Bullet.instance()
+	add_child_below_node(bullet_node ,bullet)
