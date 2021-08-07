@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://dodge_assets/art/RunningCharacter1.png" type="Texture" id=1]
 [ext_resource path="res://dodge_assets/art/RunningCharacter2.png" type="Texture" id=2]
 [ext_resource path="res://dodge_assets/art/StandingCharacter.png" type="Texture" id=3]
 [ext_resource path="res://Player.gd" type="Script" id=5]
+[ext_resource path="res://Bullet.tscn" type="PackedScene" id=6]
 
 
 [sub_resource type="SpriteFrames" id=1]
@@ -24,7 +25,9 @@ radius = 31.7732
 height = 46.6085
 
 [node name="Player" type="KinematicBody2D"]
+collision_mask = 0
 script = ExtResource( 5 )
+Bullet = ExtResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.208, 0.208 )
@@ -39,3 +42,5 @@ shape = SubResource( 2 )
 
 [node name="ProjectileStartPlace" type="Position2D" parent="."]
 position = Vector2( 0, -40 )
+
+[node name="BulletContainer" type="Node" parent="."]

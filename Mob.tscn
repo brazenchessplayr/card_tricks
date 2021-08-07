@@ -10,14 +10,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "fly",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "walk",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "fly",
 "speed": 3.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 1 ) ],
@@ -34,6 +34,7 @@ height = 28.2657
 "mobs",
 ]]
 position = Vector2( -0.353546, -1.41422 )
+collision_layer = 2
 collision_mask = 0
 gravity_scale = 0.0
 contacts_reported = 1
