@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pixil-layer-Background (2).png-85877a9b759ebb123f65a8dc87f512ff.stex"
+path="res://.import/StandingCharacter.png-32c413fc03059629fb7060c769b50e78.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pixil-layer-Background (2).png"
-dest_files=[ "res://.import/pixil-layer-Background (2).png-85877a9b759ebb123f65a8dc87f512ff.stex" ]
+source_file="res://dodge_assets/art/StandingCharacter.png"
+dest_files=[ "res://.import/StandingCharacter.png-32c413fc03059629fb7060c769b50e78.stex" ]
 
 [params]
 

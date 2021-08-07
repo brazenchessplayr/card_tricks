@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pixil-layer-Layer 1 Copy Copy Copy (1).png-a3a5c41b42b3fe9d59e769425ff514d0.stex"
+path="res://.import/RunningCharacter2.png-6491cd95f197e2aaa720d08acec93e4e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pixil-layer-Layer 1 Copy Copy Copy (1).png"
-dest_files=[ "res://.import/pixil-layer-Layer 1 Copy Copy Copy (1).png-a3a5c41b42b3fe9d59e769425ff514d0.stex" ]
+source_file="res://dodge_assets/art/RunningCharacter2.png"
+dest_files=[ "res://.import/RunningCharacter2.png-6491cd95f197e2aaa720d08acec93e4e.stex" ]
 
 [params]
 
