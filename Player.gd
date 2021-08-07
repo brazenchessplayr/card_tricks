@@ -7,6 +7,8 @@ export var speed = 400
 var screen_size
 onready var bullet_node = get_node("BulletContainer")
 
+var direction = PI * 1.5
+
 func _ready():
 	screen_size = get_viewport_rect().size
 	hide()
@@ -16,12 +18,16 @@ func _process(delta):
 	var velocity = Vector2()  # The player's movement vector.
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
+		direction = 0
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= 1
+		direction = PI
 	if Input.is_action_pressed("ui_down"):
 		velocity.y += 1
+		direction = PI / 2
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
+		direction = PI * 1.5
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite.play()
@@ -34,6 +40,7 @@ func _process(delta):
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
+	set_rotation(direction)
 	
 	if velocity.x != 0:
 		$AnimatedSprite.animation = "walk"
@@ -57,4 +64,4 @@ func start(pos):
 func shoot():
 	var bullet = Bullet.instance()
 	bullet_node.add_child(bullet)
-	bullet.start_at(get_position())
+	bullet.start_at(get_position(), get_rotation())
